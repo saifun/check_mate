@@ -1,4 +1,5 @@
 from flask import Flask
+from .blueprints.user import user
 
 application = Flask(__name__)
 
