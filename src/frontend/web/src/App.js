@@ -12,8 +12,8 @@ const {Header, Content} = Layout;
 function App() {
     return (
         <Layout>
-            <Header className="app-navbar">
-                <Link to="/homepage" className="logo">
+            <Header className="checkmate-navbar">
+                <Link to="/homepage" className="checkmate-logo">
                     <div>CheckMate</div>
                 </Link>
             </Header>
