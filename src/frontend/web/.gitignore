@@ -8,9 +8,6 @@
 # testing
 /coverage
 
-# Exclude package-lock
-src/frontend/package-lock.json
-
 # production
 /build
 
