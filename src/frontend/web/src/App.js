@@ -1,26 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
+import {Layout} from 'antd';
+import {withRouter} from 'react-router';
+import {Link, Redirect, Route} from 'react-router-dom';
+
 import './App.css';
+import 'antd/dist/antd.css';
+import Homepage from './homepage/Homepage';
+
+const {Header, Content} = Layout;
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <Layout>
+            <Header className="checkmate-navbar">
+                <Link to="/homepage" className="checkmate-logo">
+                    <div>CheckMate</div>
+                </Link>
+            </Header>
+            <Content>
+                <Route exact path="/" render={() => <Redirect to="/homepage"/>}/>
+                <Route exact path="/homepage" component={Homepage}/>
+            </Content>
+        </Layout>
+    );
 }
 
-export default App;
+export default withRouter(App);
