@@ -1,0 +1,48 @@
+.rating-card {
+  text-align: center;
+  width: 55vh;
+  height: 74vh;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card-separator {
+  margin-left: -24px; /* equals to antd's default card padding */
+  margin-right: -24px; /* as above */
+  margin-bottom: 2vh;
+  border-bottom: 1px solid #ccc;
+}
+
+#card-img {
+  margin: auto;
+  margin-bottom: 2vh;
+  width: 18vh;
+  height: 18vh;
+  border-radius: 50%;
+}
+
+#card-name {
+  font-size: 3.5vh;
+  margin-bottom: 0;
+}
+
+#card-semester {
+  font-size: 2.5vh;
+}
+
+#card-about {
+  text-align: right;
+  font-size: 1.9vh;
+}
+
+#card-work-division, .card-time {
+  margin: 0;
+  font-size: 2vh;
+}
+
+.card-small-text {
+  font-size: 1.5vh;
+}

@@ -1,0 +1,23 @@
+.bar {
+  text-align: center;
+}
+
+.full-bar-element {
+  display: inline-block;
+  width: 1.7vh;
+  height: 1.7vh;
+  background-color: #86b362;
+  margin: 0.15vh;
+  border-radius: 3px;
+  box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.2)
+}
+
+.empty-bar-element {
+  display: inline-block;
+  width: 1.7vh;
+  height: 1.7vh;
+  background-color: #9c9c9c;
+  margin: 0.15vh;
+  border-radius: 3px;
+  box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.2)
+}
