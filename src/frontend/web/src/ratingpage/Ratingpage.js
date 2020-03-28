@@ -26,22 +26,22 @@ class Ratingpage extends Component {
   likeCard() {
     this.flashLike();
     // Wait until the flash animation disapears.
-    setTimeout(() => {this.slider.slickNext()} , 900);
+    setTimeout(() => {this.slider.slickPrev()} , 900);
   };
 
   dislikeCard() {
     this.flashDislike();
     // Wait until the flash animation disapears.
-    setTimeout(() => {this.slider.slickPrev()}, 900);
+    setTimeout(() => {this.slider.slickNext()}, 900);
   };
 
   onKeyDown = (event) => {
       if(event.key === 'ArrowLeft'){
-        this.likeCard();
+        this.dislikeCard();
       };
 
       if(event.key === 'ArrowRight') {
-        this.dislikeCard();
+        this.likeCard();
       };
   };
 
@@ -89,30 +89,30 @@ class Ratingpage extends Component {
             </div>
 
             <div className='button-section left-section' >
-              <Button id='like-btn' onClick={this.likeCard} type='primary'
-               shape='round'size='large'>
-                <LikeOutlined style={{ fontSize: '7vh' }}/>
-               </Button>
+            <Button id='dislike-btn' onClick={this.dislikeCard} type='primary'
+             shape='circle'size='large'>
+              <DislikeOutlined style={{ fontSize: '7vh' }}/>
+             </Button>
             </div>
 
             <div className='flash-wrapper left-section'>
-              <div className={`hidden-content${this.state.visible_like ?
+              <div className={`hidden-content${this.state.visible_dislike ?
                  ' visible-content' : ''}`}>
-                <div className='flash-content like-animation'>אהבתי!</div>
+                <div className='flash-content dislike-animation'>פחות</div>
               </div>
             </div>
 
             <div className='button-section right-section'>
-              <Button id='dislike-btn' onClick={this.dislikeCard} type='primary'
-               shape='circle'size='large'>
-                <DislikeOutlined style={{ fontSize: '7vh' }}/>
-               </Button>
+            <Button id='like-btn' onClick={this.likeCard} type='primary'
+             shape='circle'size='large'>
+              <LikeOutlined style={{ fontSize: '7vh' }}/>
+             </Button>
             </div>
 
             <div className='flash-wrapper right-section'>
-              <div className={`hidden-content${this.state.visible_dislike ?
+              <div className={`hidden-content${this.state.visible_like ?
                  ' visible-content' : ''}`}>
-                <div className='flash-content dislike-animation'>פחות</div>
+                <div className='flash-content like-animation'>אהבתי!</div>
               </div>
             </div>
 

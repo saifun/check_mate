@@ -47,7 +47,7 @@
   background-color: #ba3033;
   border-color: #ba3033;
   padding: 4.3vh;
-  margin-right: 23vw;
+  margin-left: 23vw;
   margin-bottom: 15vh;
 }
 
@@ -59,7 +59,7 @@
 #like-btn {
   background-color: #86b362;
   border-color: #86b362;
-  margin-left: 23vw;
+  margin-right: 23vw;
   margin-bottom: 15vh;
 }
 
@@ -106,13 +106,13 @@
 .like-animation {
   background-color: #a5c28d;
   border: 2px solid #86b362;
-  transform: rotate(-30deg);
+  transform: rotate(30deg);
 }
 
 .dislike-animation {
   background-color: #d1585b;
   border: 2px solid #ba3033;
-  transform: rotate(30deg);
+  transform: rotate(-30deg);
 }
 
 .bottom-section {

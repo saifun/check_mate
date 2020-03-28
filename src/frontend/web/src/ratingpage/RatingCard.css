@@ -7,6 +7,12 @@
   margin-top: 5vh;
   margin-bottom: 5vh;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.rating-card > .ant-card-body {
+  padding-bottom: 0;
 }
 
 .card-separator {
@@ -45,4 +51,16 @@
 
 .card-small-text {
   font-size: 1.5vh;
+}
+
+.rating-card::-webkit-scrollbar {
+  width: 0.8em;
+}
+
+.rating-card::-webkit-scrollbar-track {
+  background-color: #e3e3e3;
+}
+
+.rating-card::-webkit-scrollbar-thumb {
+  background-color: #9c9c9c;
 }

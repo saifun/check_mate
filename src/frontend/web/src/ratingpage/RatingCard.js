@@ -26,28 +26,27 @@ class RatingCard extends Component {
   };
 
   render (){
-/* TODO: When there is too much text, card height exceeds page height... */
     return (
-      <div dir='rtl'>
-        <Card className='rating-card'>
-            <img id='card-img' src={this.state.img_src}/>
-            <h1 id='card-name'> <b>{this.state.name}, {this.state.age}</b> </h1>
-            <h3 id='card-semester'>
-            סמסטר {this.state.semester} ב{this.state.faculty}
-            </h3>
-            <p id='card-about'>{this.state.about}</p>
-            <div className='card-separator'></div>
-            <EffortBar effort={this.state.effort_level}/>
-            <p className='card-small-text'>מידת השקעה</p>
-            <div>
-              {(this.state.times).map((time, index) =>
-              <h4 className='card-time' key={index}>{time}</h4>)}
-            </div>
-            <p className='card-small-text'>שעות עבודה משותפות</p>
-            <h3 id='card-work-division'>{this.state.work_division}</h3>
-            <p className='card-small-text'>שיטת עבודה</p>
-        </Card>
-      </div>
+      <Card className='rating-card'>
+        <div dir='rtl'>
+          <img id='card-img' src={this.state.img_src}/>
+          <h1 id='card-name'> <b>{this.state.name}, {this.state.age}</b> </h1>
+          <h3 id='card-semester'>
+          סמסטר {this.state.semester} ב{this.state.faculty}
+          </h3>
+          <p id='card-about'>{this.state.about}</p>
+          <div className='card-separator'></div>
+          <EffortBar effort={this.state.effort_level}/>
+          <p className='card-small-text'>מידת השקעה</p>
+          <div>
+            {(this.state.times).map((time, index) =>
+            <h4 className='card-time' key={index}>{time}</h4>)}
+          </div>
+          <p className='card-small-text'>שעות עבודה משותפות</p>
+          <h3 id='card-work-division'>{this.state.work_division}</h3>
+          <p className='card-small-text'>שיטת עבודה</p>
+        </div>
+      </Card>
     );
   };
 }
