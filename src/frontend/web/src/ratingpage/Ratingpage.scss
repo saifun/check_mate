@@ -1,0 +1,147 @@
+.layout {
+  height:calc(100vh - 64px); /* equals to navbar height */
+}
+
+.rating-wrapper {
+  display: inline-block;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+}
+
+.rating-center {
+  width:100%;
+  height: 100%;
+  overflow: auto;
+  position: relative;
+}
+
+.left-section {
+  left: 0;
+}
+
+.right-section {
+  right: 0;
+}
+
+.button-section {
+  height: 100%;
+  width: 40vw;
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#dislike-btn, #like-btn {
+  height: 15vh;
+  width: 15vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+#dislike-btn {
+  background-color: #ba3033;
+  border-color: #ba3033;
+  padding: 4.3vh;
+  margin-left: 23vw;
+  margin-bottom: 15vh;
+}
+
+#dislike-btn:hover {
+  background-color: #d1585b;
+  border-color: #d1585b;
+}
+
+#like-btn {
+  background-color: #86b362;
+  border-color: #86b362;
+  margin-right: 23vw;
+  margin-bottom: 15vh;
+}
+
+#like-btn:hover {
+  background-color: #a5c28d;
+  border-color: #a5c28d;
+}
+
+.flash-wrapper {
+  position: absolute;
+  top: 13%;
+  transform: translate(-20%,-20%);
+  font-size: 2.5vh;
+}
+
+.flash-wrapper.left-section {
+  margin-left: 39vw;
+}
+
+.flash-wrapper.right-section {
+  margin-right: 36vw;
+}
+
+.hidden-content {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.4s, opacity 0.4s linear;
+}
+
+.visible-content {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.2s linear;
+}
+
+.flash-content {
+  width: 15vh;
+  height: 7vh;
+  line-height: 7vh;
+  border-radius: 1vh;
+  color: white;
+}
+
+.like-animation {
+  background-color: #a5c28d;
+  border: 2px solid #86b362;
+  transform: rotate(30deg);
+}
+
+.dislike-animation {
+  background-color: #d1585b;
+  border: 2px solid #ba3033;
+  transform: rotate(-30deg);
+}
+
+.bottom-section {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrows-wrapper {
+  position: absolute;
+  bottom: 4vh;
+  height: 5vh;
+  width: 15%;
+  display: flex;
+}
+
+.single-arrow-wrapper {
+  margin: 0 auto;
+  height: 100%;
+}
+
+.arrow-img {
+  width: auto;
+  height: 50%;
+}
+
+.small-bottom-text {
+  font-size: 1.5vh;
+}
