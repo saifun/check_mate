@@ -1,13 +1,13 @@
 import React from 'react';
-import {Layout} from 'antd';
-import {withRouter} from 'react-router';
-import {Link, Redirect, Route} from 'react-router-dom';
+import { Layout } from 'antd';
+import { withRouter } from 'react-router';
+import { Link, Redirect, Route } from 'react-router-dom';
 
 import './App.css';
 import 'antd/dist/antd.css';
 import Homepage from './homepage/Homepage';
 
-const {Header, Content} = Layout;
+const { Header, Content } = Layout;
 
 function App() {
     return (
@@ -18,8 +18,8 @@ function App() {
                 </Link>
             </Header>
             <Content>
-                <Route exact path="/" render={() => <Redirect to="/homepage"/>}/>
-                <Route exact path="/homepage" component={Homepage}/>
+                <Route exact path="/" render={() => <Redirect to="/homepage" />} />
+                <Route exact path="/homepage" component={Homepage} />
             </Content>
         </Layout>
     );
