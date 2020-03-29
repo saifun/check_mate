@@ -155,4 +155,6 @@ yarn-error.log*
 
 # Exclude package-lock
 src/frontend/package-lock.json
-*package-lock.json
+src/frontend/web/package-lock.json
+frontend/web/package-lock.json
+package-lock.json
