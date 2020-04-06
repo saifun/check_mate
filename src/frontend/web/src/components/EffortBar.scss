@@ -1,3 +1,5 @@
+@import '../assets/styles/colors';
+
 .bar {
   text-align: center;
 }
@@ -6,7 +8,7 @@
   display: inline-block;
   width: 1.7vh;
   height: 1.7vh;
-  background-color: #86b362;
+  background-color: $grass-green;
   margin: 0.15vh;
   border-radius: 3px;
   box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.2)
@@ -16,7 +18,7 @@
   display: inline-block;
   width: 1.7vh;
   height: 1.7vh;
-  background-color: #9c9c9c;
+  background-color: $steel-grey;
   margin: 0.15vh;
   border-radius: 3px;
   box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.2)

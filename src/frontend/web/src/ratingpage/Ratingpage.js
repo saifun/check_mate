@@ -1,142 +1,98 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import Slider from "react-slick";
 import Layout from 'antd/lib/layout';
-import Button from 'antd/lib/button';
-import { LikeTwoTone, DislikeTwoTone, DislikeOutlined,
-        LikeOutlined } from '@ant-design/icons';
 
 import 'antd/dist/antd.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import './Ratingpage.scss';
+import './RatingPage.scss';
 import RatingCard from './RatingCard';
+import RatingButton from './RatingButton';
+import FlashAnimation from './FlashAnimation';
+import ArrowIcon from './ArrowIcon';
 
-class Ratingpage extends Component {
-  constructor(props) {
-    super(props);
-    this.likeCard = this.likeCard.bind(this);
-    this.dislikeCard = this.dislikeCard.bind(this);
+const leftArrow = 'ArrowLeft';
+const rightArrow = 'ArrowRight';
+export const getUserDetails = () => axios.get('/api/user/get_data');
 
-    this.state = {
-      visible_like: false,
-      visible_dislike: false
-    };
-  };
+const RatingPage = () => {
+  const [visibleLike, setVisibleLike] = useState(false);
+  const [visibleDislike, setVisibleDisike] = useState(false);
+  const [currentUser, setCurrentUser] = useState(null);
 
-  likeCard() {
-    this.flashLike();
-    // Wait until the flash animation disapears.
-    setTimeout(() => {this.slider.slickPrev()} , 900);
-  };
-
-  dislikeCard() {
-    this.flashDislike();
-    // Wait until the flash animation disapears.
-    setTimeout(() => {this.slider.slickNext()}, 900);
-  };
-
-  onKeyDown = (event) => {
-      if(event.key === 'ArrowLeft'){
-        this.dislikeCard();
-      };
-
-      if(event.key === 'ArrowRight') {
-        this.likeCard();
-      };
-  };
-
-  componentDidMount() {
-      document.addEventListener('keydown', this.onKeyDown);
-  };
-
-  componentWillUnmount(){
-    document.removeEventListener('keydown',this.onKeyDown);
-  };
-
-  flashLike = () => {
-    this.setState({ visible_like: true });
+  const flashDislike = () => {
+    setVisibleDisike(true);
     setTimeout(() => {
-      this.setState({ visible_like: false });
+      setVisibleDisike(false);
     }, 450);
   };
 
-  flashDislike = () => {
-    this.setState({ visible_dislike: true });
+  const flashLike = () => {
+    setVisibleLike(true);
     setTimeout(() => {
-      this.setState({ visible_dislike: false });
+      setVisibleLike(false);
     }, 450);
   };
 
-  render (){
-    const settings = {
-      infinite: true,
-      speed: 800,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      arrows: false,
-      draggable: false
-    };
+  // Settings for Slick's carousel.
+  const settings = {
+    infinite: true,
+    speed: 800,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    draggable: false,
+    accessibility: false,
+    nextArrow: <RatingButton icon='DislikeOutlined' flashFunc={flashDislike}/>,
+    prevArrow: <RatingButton icon='LikeOutlined' flashFunc={flashLike}/>
+  };
 
-    return (
-      <Layout className='layout'>
-        <div className='rating-wrapper' dir='rtl'>
-          <div className='rating-center'>
-            <div className='slider-wrapper'>
-              <Slider ref={c => (this.slider = c)} {...settings}>
-                <RatingCard />
-                <RatingCard />
-              </Slider>
-            </div>
+  const onKeyDown = (event) => {
+      if(event.key === leftArrow){
+        document.getElementsByClassName('slick-arrow slick-next')[0].click();
+      };
 
-            <div className='button-section left-section' >
-            <Button id='dislike-btn' onClick={this.dislikeCard} type='primary'
-             shape='circle'size='large'>
-              <DislikeOutlined style={{ fontSize: '7vh' }}/>
-             </Button>
-            </div>
+      if(event.key === rightArrow) {
+        document.getElementsByClassName('slick-arrow slick-prev')[0].click();
+      };
+  };
 
-            <div className='flash-wrapper left-section'>
-              <div className={`hidden-content${this.state.visible_dislike ?
-                 ' visible-content' : ''}`}>
-                <div className='flash-content dislike-animation'>פחות</div>
-              </div>
-            </div>
+  useEffect(() => {
+    getUserDetails().then(result => {
+      setCurrentUser(result.data);
+    });
 
-            <div className='button-section right-section'>
-            <Button id='like-btn' onClick={this.likeCard} type='primary'
-             shape='circle'size='large'>
-              <LikeOutlined style={{ fontSize: '7vh' }}/>
-             </Button>
-            </div>
+    document.addEventListener('keydown', onKeyDown);
 
-            <div className='flash-wrapper right-section'>
-              <div className={`hidden-content${this.state.visible_like ?
-                 ' visible-content' : ''}`}>
-                <div className='flash-content like-animation'>אהבתי!</div>
-              </div>
-            </div>
+    return () => {
+      document.removeEventListener('keydown', onKeyDown);
+    }
+  }, []);
 
-            {/* Arrows image taken from here:
-              https://www.pngfuel.com/free-png/acyqi */}
-            <div className='bottom-section'>
-              <div className='arrows-wrapper'>
-                <p className='small-bottom-text'>אפשר גם עם החיצים:</p>
-                <div className='single-arrow-wrapper'>
-                  <img className='arrow-img' src={require('./right-arrow.png')}/>
-                  <p className='small-bottom-text'>פחות אהבתי</p>
-                </div>
-                <div className='single-arrow-wrapper'>
-                  <img className='arrow-img' src={require('./left-arrow.png')}/>
-                  <p className='small-bottom-text'>אהבתי</p>
-                </div>
-              </div>
-            </div>
-
-          </div>
+  return (
+    <Layout style={{height: 'calc(100vh - 64px)', textAlign: 'center' }}>
+      <div className='rating-wrapper' dir='rtl'>
+        <div className='slider-wrapper'>
+          <Slider {...settings}>
+            <RatingCard {...currentUser}/>
+            <RatingCard {...currentUser}/>
+          </Slider>
         </div>
-      </Layout>
-    );
-  };
-}
 
-export default Ratingpage;
+        <FlashAnimation flashClass='flash-like' isVisible={visibleLike} />
+        <FlashAnimation flashClass='flash-dislike' isVisible={visibleDislike}/>
+
+        <div className='arrows-wrapper'>
+          <ArrowIcon icon='RightSquareTwoTone'
+            tooltipTitle='לחצו על החץ הימני במקלדת בשביל "אהבתי"'/>
+          <ArrowIcon icon='LeftSquareTwoTone'
+            tooltipTitle='לחצו על החץ השמאלי במקלדת בשביל "פחות אהבתי"'/>
+        </div>
+    </div>
+  </Layout>
+  );
+};
+
+// No PropTypes since this components has no props.
+
+export default RatingPage;

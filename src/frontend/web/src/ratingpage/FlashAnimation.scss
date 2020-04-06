@@ -1,0 +1,42 @@
+@import '../assets/styles/colors';
+
+.flash-wrapper {
+  position: absolute;
+  top: 20%;
+  transform: translate(-20%,-20%);
+  font-size: 2.5vh;
+}
+
+.flash-wrapper .flash-dislike {
+  margin-right: 45vw;
+  background-color: $dark-pink;
+  border: 2px solid $cherry-red;
+  transform: rotate(-30deg);
+}
+
+.flash-wrapper .flash-like {
+  margin-right: 30.5vw;
+  background-color: $light-green;
+  border: 2px solid $grass-green;
+  transform: rotate(30deg);
+}
+
+.hidden-content {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.4s, opacity 0.4s linear;
+}
+
+.visible-content {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.2s linear;
+}
+
+.flash-content {
+  width: 15vh;
+  height: 7vh;
+  line-height: 7vh;
+  border-radius: 1vh;
+  color: white;
+}
