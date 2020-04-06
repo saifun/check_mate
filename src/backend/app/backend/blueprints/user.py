@@ -7,7 +7,7 @@ def get_data():
 
     new_user = {
         'name': 'אביב צנזור',
-        'img_src': '/censor-profile.png',
+        'imgSrc': '/censor-profile.png',
         'age': 46,
         'semester': 7,
         'faculty': "מתמטיקה",
@@ -23,7 +23,7 @@ def get_data():
                 "יום ב' 20:00-22:00",
                 "יום ב' 20:00-22:00"],
         'effort': 3,
-        'work_partition': 'עובדים ביחד'
+        'workPartition': 'עובדים ביחד'
     }
 
     return jsonify(new_user)
