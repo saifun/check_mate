@@ -4,7 +4,7 @@ import { withRouter } from 'react-router';
 import { Link, Redirect, Route } from 'react-router-dom';
 import propTypes from 'prop-types';
 
-import './App.css';
+import './App.scss';
 import 'antd/dist/antd.css';
 import Homepage from './homepage/Homepage';
 
