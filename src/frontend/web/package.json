@@ -12,6 +12,7 @@
     "eslint-config-airbnb": "^18.1.0",
     "eslint-plugin-react-hooks": "^2.5.1",
     "history": "^4.10.1",
+    "node-sass": "^4.13.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-router": "^5.1.2",
