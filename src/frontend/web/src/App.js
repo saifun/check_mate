@@ -2,6 +2,7 @@ import React from 'react';
 import { Layout } from 'antd';
 import { withRouter } from 'react-router';
 import { Link, Redirect, Route } from 'react-router-dom';
+import propTypes from 'prop-types';
 
 import './App.css';
 import 'antd/dist/antd.css';
@@ -9,7 +10,11 @@ import Homepage from './homepage/Homepage';
 
 const { Header, Content } = Layout;
 
-function App() {
+function App({ history }) {
+    const redirectNotLoggedIn = () => {
+        history.push('/login');
+    };
+
     return (
         <Layout>
             <Header className="checkmate-navbar">
@@ -24,5 +29,14 @@ function App() {
         </Layout>
     );
 }
+
+App.propTypes = {
+    history: {
+        push: propTypes.func,
+        location: {
+            pathname: propTypes.string
+        }
+    }.isRequired
+};
 
 export default withRouter(App);
