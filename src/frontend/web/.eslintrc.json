@@ -1,0 +1,73 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["airbnb"],
+  "plugins": ["react-hooks"],
+  "rules": {
+    "react/static-property-placement": "off",
+    "jsx-a11y/mouse-events-have-key-events": "off",
+    "react/state-in-constructor": "off",
+    "react/no-unescaped-entities": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/jsx-filename-extension": "off",
+    "react/forbid-prop-types": "off",
+    "import/prefer-default-export": "off",
+    "react/no-array-index-key": "warn",
+    "no-restricted-syntax": "off",
+    "no-trailing-spaces": "off", // really annoying and fixable automatically anyways (--fix)
+    "no-plusplus": "off",
+    "jsx-a11y/alt-text": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "jsx-a11y/no-noninteractive-element-interactions": "off",
+    "jsx-a11y/anchor-has-content": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "jsx-a11y/no-noninteractive-tabindex": "off",
+    "no-underscore-dangle": "warn",
+    "react/no-did-update-set-state": "warn",
+    "react/no-did-mount-set-state": "warn",
+    "object-curly-newline": "off",
+    "no-nested-ternary": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/jsx-closing-bracket-location": "off",
+    "react/jsx-closing-tag-location": "off", // This one is really bad, it contradicts another rule
+    "react/sort-comp": "off",
+    "prefer-destructuring": "warn", // This one is wrong sometimes
+    "linebreak-style": "off",
+    "no-multiple-empty-lines": [
+      "warn",
+      {
+        "max": 1
+      }
+    ],
+    "comma-dangle": ["warn", "never"],
+    "indent": [
+      "error",
+      4,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "react/jsx-indent": ["error", 4],
+    "react/jsx-indent-props": ["error", 4],
+    "max-len": ["error", 160]
+  },
+  "env": {
+    "browser": true,
+    "jest": true
+  },
+  "globals": {
+    // `false` means no assignment
+    "_": false,
+    "angular": false,
+    "$": false,
+    "toastr": false,
+    "Mousetrap": false,
+    "kendo": false,
+    "saveAs": false
+  },
+  "ignorePatterns": [
+    "src/serviceWorker.js",
+    "external_node_modules"
+  ]
+}
