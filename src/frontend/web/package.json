@@ -15,6 +15,7 @@
     "prop-types": "^15.7.2",
     "eslint-config-airbnb": "^18.1.0",
     "eslint-plugin-react-hooks": "^2.5.1",
+    "react-use-toggle": "^0.1.0",
     "history": "^4.10.1",
     "node-sass": "^4.13.1",
     "react": "^16.13.0",
