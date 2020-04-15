@@ -6,8 +6,16 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.1",
     "@testing-library/user-event": "^7.2.1",
+    "@ant-design/icons": "^4.0.3",
+    "airbnb": "^0.0.2",
     "antd": "^4.0.4",
+    "eslint": "^6.8.0",
     "axios": "^0.19.2",
+    "lodash": "^4.17.15",
+    "prop-types": "^15.7.2",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-plugin-react-hooks": "^2.5.1",
+    "history": "^4.10.1",
     "node-sass": "^4.13.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
@@ -37,5 +45,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "proxy": "http://localhost:8080"
 }

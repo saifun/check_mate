@@ -1,0 +1,49 @@
+:root {
+  --primary-color: #e2eaed;
+  --primary-dark-color: #2d2d2d;
+  --secondary-color: #cecda8;
+  --dark-blue: #001529;
+  --blackish: #1b1d1e;
+  --grey: #aaaaaa;
+  --grass-green: #86b362;
+  --light-green: #a5c28d;
+  --steel-grey: #9c9c9c;
+  --mouse-grey: #cccc;
+  --light-grey: #e3e3e3;
+  --sea-blue: #569be3;
+  --dark-pink: #d1585b;
+  --cherry-red: #ba3033;
+  --input-suffix-width: 105px;
+  --scrollbar-size: 8px;
+}
+
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.ant-layout {
+  .ant-layout-header {
+    background-color: var(--dark-blue);
+    height: 10vh;
+  }
+
+  .ant-layout-content {
+    background-color: var(--primary-color);
+    height: 90vh;
+  }
+}
+

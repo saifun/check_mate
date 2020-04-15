@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Router } from 'react-router-dom';
 import { createBrowserHistory } from 'history/index';
 
-import './index.css';
+import './index.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import 'antd/dist/antd.css';

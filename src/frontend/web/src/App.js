@@ -1,31 +1,49 @@
 import React from 'react';
-import {Layout} from 'antd';
-import {withRouter} from 'react-router';
-import {Link, Redirect, Route} from 'react-router-dom';
+import { Layout } from 'antd';
+import { withRouter } from 'react-router';
+import { Link, Redirect, Route } from 'react-router-dom';
+import propTypes from 'prop-types';
 
-import './App.css';
+import './App.scss';
 import 'antd/dist/antd.css';
 import Homepage from './homepage/Homepage';
 import Ratingpage from './ratingpage/Ratingpage';
 import MatchPage from './matchpage/MatchPage';
-const {Header, Content} = Layout;
+import UserStore from './user/UserStore';
 
-function App() {
+const { Header, Content } = Layout;
+
+function App({ history }) {
+    const redirectNotLoggedIn = () => {
+        history.push('/login');
+    };
+
     return (
-        <Layout>
-            <Header className="checkmate-navbar">
-                <Link to="/homepage" className="checkmate-logo">
-                    <div>CheckMate</div>
-                </Link>
-            </Header>
-            <Content>
-                <Route exact path="/" render={() => <Redirect to="/homepage"/>}/>
-                <Route exact path="/homepage" component={Homepage}/>
-                <Route exact path="/ratingpage" component={Ratingpage}/>
-                <Route exact path="/match-page" component={MatchPage} />
-            </Content>
+        <Layout className="App">
+            <UserStore>
+                <Header className="checkmate-navbar">
+                    <Link to="/homepage" className="checkmate-logo">
+                        <div>CheckMate</div>
+                    </Link>
+                </Header>
+                <Content>
+                    <Route exact path="/" render={() => <Redirect to="/homepage" />} />
+                    <Route exact path="/homepage" component={Homepage} />
+                    <Route exact path="/ratingpage" component={Ratingpage}/>
+                    <Route exact path="/match-page" component={MatchPage} />
+                </Content>
+            </UserStore>
         </Layout>
     );
 }
+
+App.propTypes = {
+    history: {
+        push: propTypes.func,
+        location: {
+            pathname: propTypes.string
+        }
+    }.isRequired
+};
 
 export default withRouter(App);
