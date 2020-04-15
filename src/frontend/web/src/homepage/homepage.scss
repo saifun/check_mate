@@ -9,3 +9,13 @@
   justify-content: center;
   padding: 5%;
 }
+
+.find-mate-image {
+  height: 65vh;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  &:hover {
+    cursor: pointer;
+  }
+}
