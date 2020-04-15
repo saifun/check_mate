@@ -1,25 +1,28 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
-import getUserDetails from './actions';
+import { getUserDetails } from './actions';
+
+export const UserStoreContext = React.createContext({});
 
 const UserStore = ({ children }) => {
     const [username, setUsername] = useState('');
-    const [matches, setMatches] = useState([]);
-    const [courses, setCourses] = useState([]);
+    const [userMatches, setMatches] = useState([]);
+    const [userCourses, setCourses] = useState([]);
 
     useEffect(() => {
         const decapsulateUserDetails = async () => {
             const {
                 data: {
                     username: name,
-                    userMatches,
-                    userCourses
+                    matches,
+                    courses
                 }
-            } = await getUserDetails();
+            } = await getUserDetails('johndoe');
+            console.log(name, matches, courses);
             setUsername(name);
-            setMatches(userMatches);
-            setCourses(userCourses);
+            setMatches(matches);
+            setCourses(courses);
         };
         decapsulateUserDetails();
     }, []);
@@ -28,8 +31,8 @@ const UserStore = ({ children }) => {
         <UserStoreContext.Provider
             value={{
                 username,
-                matches,
-                courses
+                userMatches,
+                userCourses
             }}>
             {username && children}
         </UserStoreContext.Provider>

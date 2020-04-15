@@ -11,6 +11,7 @@
     "antd": "^4.0.4",
     "eslint": "^6.8.0",
     "axios": "^0.19.2",
+    "lodash": "^4.17.15",
     "prop-types": "^15.7.2",
     "eslint-config-airbnb": "^18.1.0",
     "eslint-plugin-react-hooks": "^2.5.1",
@@ -42,5 +43,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "proxy": "http://localhost:8080"
 }

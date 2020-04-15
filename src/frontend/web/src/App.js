@@ -7,6 +7,7 @@ import propTypes from 'prop-types';
 import './App.scss';
 import 'antd/dist/antd.css';
 import Homepage from './homepage/Homepage';
+import UserStore from './user/UserStore';
 
 const { Header, Content } = Layout;
 
@@ -17,15 +18,17 @@ function App({ history }) {
 
     return (
         <Layout className="App">
-            <Header className="checkmate-navbar">
-                <Link to="/homepage" className="checkmate-logo">
-                    <div>CheckMate</div>
-                </Link>
-            </Header>
-            <Content>
-                <Route exact path="/" render={() => <Redirect to="/homepage" />} />
-                <Route exact path="/homepage" component={Homepage} />
-            </Content>
+            <UserStore>
+                <Header className="checkmate-navbar">
+                    <Link to="/homepage" className="checkmate-logo">
+                        <div>CheckMate</div>
+                    </Link>
+                </Header>
+                <Content>
+                    <Route exact path="/" render={() => <Redirect to="/homepage" />} />
+                    <Route exact path="/homepage" component={Homepage} />
+                </Content>
+            </UserStore>
         </Layout>
     );
 }
