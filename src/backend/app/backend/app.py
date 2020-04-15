@@ -42,7 +42,8 @@ def add_to_db_test(name, age):
 @application.route('/<name>')
 def get_data_from_db_test(name):
     user = User.query.filter_by(name=name).first()
-    return f'{ user.name } is { user.age } years old.'
+    return 1
+ #   return f'{ user.name } is { user.age } years old.'
 
 
 @application.route('/')
