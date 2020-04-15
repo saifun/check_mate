@@ -1,0 +1,79 @@
+.container-0 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.container-1 {
+  display: flex;
+  flex-direction: column;
+  orientation: ce;
+}
+
+.container-2 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 30px;
+}
+
+.button-done {
+  background-color: green;
+  flex: 2;
+  height: 100px;
+  width: 100px;
+  border: 5px solid black;
+}
+
+.button-cancel {
+  background-color: red;
+  flex: 3;
+  height: 100px;
+  width: 100px;
+  border: 5px solid black;
+}
+
+.button-report {
+  background-color: black;
+  color: white;
+  height: 100px;
+  width: 100px;
+  flex: 2;
+}
+
+.match-billboard {
+  text-align: center;
+  font-size: 30px;
+  color: red;
+  font-weight: bold;
+  text-decoration: underline;
+  direction: ltr;
+}
+
+.main-text {
+  font-size: 30px;
+  font-weight: bold;
+  position: relative;
+  margin-left: 10em;
+  margin-right: 10em;
+  margin-top: 2em;
+  margin-bottom: 5em;
+  padding: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.user-image {
+  position: relative;
+  border-radius: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:2em;
+  border: 5px solid black;
+  orientation: center;
+}
+
+.myfooter{
+position: relative;
+padding: end;
+}

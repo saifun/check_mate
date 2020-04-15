@@ -1,0 +1,54 @@
+import React, { Component, useState } from "react";
+import { Descriptions } from "antd";
+import "./MatchPage.css";
+import { Card } from 'antd';
+import DescriptionsItem from "antd/lib/descriptions/Item";
+
+
+
+const MatchInfo = () => {
+  const user = {
+    name: "אביב צנזור",
+    img_src: 0,
+    age: 46,
+    semester: 7,
+    faculty: "מתמטיקה",
+    adress:"חיפה",
+    about: [
+      "מלמד מתמטיקה, חובב כלבים וריצות ארוכות. ",
+      "לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג",
+      "לית גולר מונפרר סוברט לורם שבצק יהול, לכנוץ בעריר גק ליץ.",
+      " עמחליף קולורס מונפרד צוט ומעיוט - לפתיעם ברשג."
+    ].join(" "),
+    times: ["יום א' 20:00-22:00", "יום ב' 20:00-22:00"],
+    effort_level: 3,
+    work_division: "עובדים ביחד",
+    mail: "aviv@technion.ac.il",
+    phone: "0520000000",
+    blank: undefined
+  };
+
+  return (
+    <div dir="rtl" className="container-1">
+       <img className="user-image" src="data:image/jpeg;base64,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"></img>
+      <Descriptions  className="main-text">
+        <Descriptions.Item label="שם משתמש">{user.name}</Descriptions.Item>
+        <Descriptions.Item label="פקולטה">{user.faculty}</Descriptions.Item>
+        <Descriptions.Item label="מקום מגורים">{user.adress}</Descriptions.Item>
+        <Descriptions.Item label="גיל">{user.age}</Descriptions.Item>
+        <Descriptions.Item label="סמסטר">{user.semester}</Descriptions.Item>
+        <br />
+        <Descriptions.Item label="מייל">{user.mail}</Descriptions.Item>
+        <Descriptions.Item label="טלפון">{user.phone}</Descriptions.Item>
+        <br />
+        <Descriptions.Item label="רמת השקעה"> {user.effort_level}</Descriptions.Item>
+        <Descriptions.Item label="צורת עבודה">{user.effort_level}</Descriptions.Item>
+        <Descriptions.Item label="שעות פנויות">{user.times}</Descriptions.Item>
+        <Descriptions.Item label="פרטים נוספים">{user.about}</Descriptions.Item>
+      </Descriptions>
+    
+    </div>  
+  );
+};
+
+export default MatchInfo;

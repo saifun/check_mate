@@ -7,7 +7,7 @@ import './App.css';
 import 'antd/dist/antd.css';
 import Homepage from './homepage/Homepage';
 import Ratingpage from './ratingpage/Ratingpage';
-
+import MatchPage from './matchpage/MatchPage';
 const {Header, Content} = Layout;
 
 function App() {
@@ -22,6 +22,7 @@ function App() {
                 <Route exact path="/" render={() => <Redirect to="/homepage"/>}/>
                 <Route exact path="/homepage" component={Homepage}/>
                 <Route exact path="/ratingpage" component={Ratingpage}/>
+                <Route exact path="/match-page" component={MatchPage} />
             </Content>
         </Layout>
     );
