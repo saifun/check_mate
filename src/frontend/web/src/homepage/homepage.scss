@@ -3,19 +3,28 @@
   height: 90vh;
 }
 
-.data-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 5%;
-}
-
-.find-mate-image {
-  height: 65vh;
+.partner-request {
   position: absolute;
   left: 0;
   bottom: 0;
-  &:hover {
-    cursor: pointer;
+  width: 20vw;
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+
+  .find-a-partner-button {
+    background-color: var(--sea-blue);
+    max-width: 80%;
+  }
+
+  .find-mate-image {
+    height: 65vh;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
